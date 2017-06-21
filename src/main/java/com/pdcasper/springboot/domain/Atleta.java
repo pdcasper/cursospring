@@ -1,6 +1,7 @@
 package com.pdcasper.springboot.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -24,13 +25,11 @@ public class Atleta implements Serializable {
     private String sexo;
     
     @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date fechaNacimiento;
 
-    public Atleta(String nombre, String apellidos, String sexo, Date fecha) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.sexo = sexo;
-        this.fechaNacimiento = fecha;
+    public Atleta() {
+        
     }
     public Long getId() {
         return id;
